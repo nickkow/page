@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+<form actlon= "page1.php" mathod= "post">
+
+Book name: <input type="text" name="bookname">
+Book Authort: <input type= "text"name= "bookauthor">
+Book cover type:<input type="text"name="bookcover">
+<br>
+<input type="submit" value= "Add Record">
+</form>
+
+<?php
+
+$varl = $-POST ['bookname'];
+$var2 = $-POST ['bookauthor"];
+$var3 = $-POST ['bookcover"];
+
+$fileHandle = fopen("phpdatafile.txt",'a');
+
+fwrite($fileHandle,$var1.",".$var2.","$var3."\n");
+
+fclose($fileHandle);
+
+echo "Record added";
+?>
+</body>
+</html>
